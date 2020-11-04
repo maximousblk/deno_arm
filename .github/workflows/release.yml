@@ -108,7 +108,7 @@ jobs:
         with:
           tag: "test"
           name: "Test Release"
-          prerelease: true
+          prerelease: false
           allowUpdates: true
           replacesArtifacts: true
           artifacts: "release/*"
