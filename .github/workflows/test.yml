@@ -6,12 +6,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: arm64v8/ubuntu:latest
     timeout-minutes: 60
-
-    env:
-      CARGO_INCREMENTAL: 0
-      RUST_BACKTRACE: full
+    container: 
+      image: arm64v8/ubuntu:latest
+      env:
+        CARGO_INCREMENTAL: 0
+        RUST_BACKTRACE: full
 
     steps:
       - name: Clone repository
