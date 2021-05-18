@@ -1,0 +1,21 @@
+language: rust
+rust: stable
+cache: cargo
+os: linux
+arch: arm64
+env:
+  DENO_CANARY: true
+
+before_install:
+  - git clone https://github.com/denoland/deno.git
+  - cd deno
+
+before_script:
+  - rustup component add clippy
+  - rustup component add rustfmt
+
+script:
+  - cargo build --release --locked --all-targets -vv
+
+artifacts: true
+  paths: target/release/deno
