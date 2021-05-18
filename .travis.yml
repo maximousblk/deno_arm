@@ -2,11 +2,12 @@ language: rust
 rust: stable
 cache: cargo
 os: linux
+dist: bionic
 arch: arm64
 env:
   DENO_CANARY: true
 
-before_install:
+install:
   - git clone https://github.com/denoland/deno.git
   - cd deno
 
@@ -15,4 +16,5 @@ before_script:
   - rustup component add rustfmt
 
 script:
+  - ls -ah
   - cargo build --release --locked --all-targets -vv
