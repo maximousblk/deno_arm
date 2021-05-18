@@ -16,6 +16,3 @@ before_script:
 
 script:
   - cargo build --release --locked --all-targets -vv
-
-artifacts: true
-  paths: target/release/deno
