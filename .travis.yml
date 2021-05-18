@@ -7,6 +7,6 @@ arch: arm64
 env:
   DENO_CANARY: true
 
-before_script: git clone https://github.com/denoland/deno.git && cd deno
+before_script: git clone --recurse-submodules --depth=50 https://github.com/denoland/deno.git && cd deno
 
 script: cargo build --release --locked
