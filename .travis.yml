@@ -7,7 +7,6 @@ arch: arm64
 env:
   DENO_CANARY: true
 
-script:
-  - git clone https://github.com/denoland/deno.git
-  - cd deno
-  - cargo build --release --locked
+before_script: git clone https://github.com/denoland/deno.git && cd deno
+
+script: cargo build --release --locked
